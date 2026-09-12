@@ -1,0 +1,52 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+
+# IDE settings
+.vscode/
+.idea/
+
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+
+# Logs
+*.log
+
+
+# Project data
+data/*
+
+# Allow the processed directory itself
+!data/processed/
+
+# Ignore everything inside the processed directory by default
+data/processed/*
+
+# Keep selected model documentation and metadata
+!data/processed/model_card.json
+!data/processed/model_decision_record.csv
+!data/processed/selected_model_metadata.json
+!data/processed/final_temporal_model_comparison.csv

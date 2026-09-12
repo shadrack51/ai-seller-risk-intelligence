@@ -1,0 +1,3 @@
+target,selected_model,validation_roc_auc,test_roc_auc,validation_threshold,test_precision,test_recall,test_f1,role,confidence,production_use,recommended_action,automation_level
+Future delivery risk,Random Forest,0.5476,0.5075,0.15,0.1325,0.578,0.2156,Monitoring and early-warning signal,Low,Cautious operational monitoring only,"Investigate delivery trends, late-order behavior, and operational performance.",Human review required
+Future review risk,Logistic Regression,0.6214,0.6555,0.12,0.1225,0.8348,0.2137,Screening and prioritization signal,Moderate-low,Prioritize sellers for review and investigation,"Review customer feedback, seller experience indicators, and recent operational changes.",Human review required

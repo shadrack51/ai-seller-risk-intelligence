@@ -1,0 +1,77 @@
+{
+    "project": {
+        "name": "AI Seller Risk Intelligence System",
+        "purpose": "Identify seller patterns associated with future delivery and review risk."
+    },
+    "evaluation": {
+        "temporal_observations": 10666,
+        "unique_sellers": 1684,
+        "snapshots": 20,
+        "train_observations": 6046,
+        "validation_observations": 2272,
+        "test_observations": 2348,
+        "evaluation_method": "Temporal train/validation/test evaluation",
+        "threshold_selection": "Validation data only",
+        "test_usage": "Final out-of-time evaluation only",
+        "calibration_status": "Scores should not be interpreted as well-calibrated literal probabilities"
+    },
+    "models": {
+        "delivery": {
+            "target": "Future delivery risk",
+            "selected_model": "Random Forest",
+            "validation_roc_auc": 0.5476,
+            "test_roc_auc": 0.5075,
+            "validation_threshold": 0.15,
+            "test_precision": 0.1325,
+            "test_recall": 0.578,
+            "test_f1": 0.2156,
+            "role": "Monitoring and early-warning signal",
+            "confidence": "Low",
+            "production_use": "Cautious operational monitoring only",
+            "not_for": "High-confidence automated decisions or guaranteed predictions",
+            "reason": "Random Forest had the highest test ROC-AUC among the evaluated delivery models, but performance remained close to random ranking."
+        },
+        "review": {
+            "target": "Future review risk",
+            "selected_model": "Logistic Regression",
+            "validation_roc_auc": 0.6214,
+            "test_roc_auc": 0.6555,
+            "validation_threshold": 0.12,
+            "test_precision": 0.1225,
+            "test_recall": 0.8348,
+            "test_f1": 0.2137,
+            "role": "Screening and prioritization signal",
+            "confidence": "Moderate-low",
+            "production_use": "Prioritize sellers for review and investigation",
+            "not_for": "Automatic punitive decisions or guaranteed predictions",
+            "reason": "Logistic Regression achieved the strongest out-of-time ranking performance among the evaluated review-risk models."
+        }
+    },
+    "business_actions": {
+        "delivery": {
+            "purpose": "Identify sellers that may require delivery-performance monitoring.",
+            "recommended_action": "Investigate delivery trends, late-order behavior, and operational performance.",
+            "automation_level": "Human review required"
+        },
+        "review": {
+            "purpose": "Prioritize sellers whose patterns are associated with future review risk.",
+            "recommended_action": "Review customer feedback, seller experience indicators, and recent operational changes.",
+            "automation_level": "Human review required"
+        }
+    },
+    "limitations": [
+        "Delivery-risk temporal discrimination is weak.",
+        "Review-risk performance is stronger, but precision remains relatively low.",
+        "Temporal changes in the data may cause future model performance to drift.",
+        "Model coefficients and SHAP values describe model behavior and associations, not causation.",
+        "Predictions should be treated as screening or monitoring signals rather than guarantees.",
+        "The final test period was not used for training or threshold selection."
+    ],
+    "governance": {
+        "human_review_required": true,
+        "automatic_punitive_decisions": false,
+        "literal_probability_claims": false,
+        "test_set_used_for_training": false,
+        "test_set_used_for_threshold_selection": false
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "delivery": {
+        "target": "future_delivery_risk",
+        "model_type": "RandomForestClassifier",
+        "source_artifact": "delivery_early_warning_model.joblib",
+        "deployment_artifact": "delivery_risk_random_forest.joblib",
+        "validation_threshold": 0.15,
+        "test_roc_auc": 0.5075,
+        "test_precision": 0.1325,
+        "test_recall": 0.578,
+        "test_f1": 0.2156,
+        "role": "Monitoring and early-warning signal",
+        "confidence": "Low",
+        "human_review_required": true
+    },
+    "review": {
+        "target": "future_review_risk",
+        "model_type": "LogisticRegression",
+        "deployment_artifact": "review_risk_logistic_regression.joblib",
+        "validation_threshold": 0.12,
+        "test_roc_auc": 0.6555,
+        "test_precision": 0.1225,
+        "test_recall": 0.8348,
+        "test_f1": 0.2137,
+        "role": "Screening and prioritization signal",
+        "confidence": "Moderate-low",
+        "human_review_required": true
+    },
+    "temporal_evaluation": {
+        "train_rows": 6046,
+        "validation_rows": 2272,
+        "test_rows": 2348,
+        "test_used_for_training": false,
+        "test_used_for_threshold_selection": false
+    }
+}
