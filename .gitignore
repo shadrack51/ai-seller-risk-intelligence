@@ -50,3 +50,6 @@ data/processed/*
 !data/processed/model_decision_record.csv
 !data/processed/selected_model_metadata.json
 !data/processed/final_temporal_model_comparison.csv
+# Required production model artifacts
+!data/processed/delivery_risk_random_forest.joblib
+!data/processed/review_risk_logistic_regression.joblib

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Assess marketplace seller delivery and review risk using machine learning and seller behavior analytics."
+    >
+
+    <meta name="theme-color" content="#070d17">
+
+    <title>Seller Risk Intelligence</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1220'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='48' font-family='Arial' fill='%2360a5fa'%3ESR%3C/text%3E%3C/svg%3E"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark" aria-hidden="true">SR</div>
+
+            <div class="brand-copy">
+                <strong>Seller Risk Intelligence</strong>
+                <span>Marketplace Risk Analytics</span>
+            </div>
+        </div>
+
+        <div
+            id="api-status"
+            class="api-status"
+            role="status"
+            aria-live="polite"
+        >
+            Connecting to service…
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-kicker">
+                SELLER RISK ANALYTICS
+            </div>
+
+            <h1 id="page-title">
+                Understand seller risk
+                <span>before it impacts your marketplace.</span>
+            </h1>
+
+            <p>
+                Evaluate seller behavior using machine learning.
+                Identify potential delivery and review risks,
+                understand the factors behind each prediction,
+                and support informed marketplace decisions.
+            </p>
+        </section>
+
+        <section
+            class="assessment-panel"
+            aria-labelledby="assessment-title"
+        >
+            <div class="section-kicker">
+                RISK ASSESSMENT
+            </div>
+
+            <h2 id="assessment-title">
+                Assess a seller
+            </h2>
+
+            <form
+                id="seller-form"
+                class="seller-form"
+            >
+                <div class="input-group">
+                    <label for="seller-id">
+                        Seller ID
+                    </label>
+
+                    <div class="input-row">
+                        <input
+                            id="seller-id"
+                            name="seller_id"
+                            type="text"
+                            autocomplete="off"
+                            placeholder="Enter seller ID"
+                            aria-describedby="seller-id-help form-error"
+                            required
+                        >
+
+                        <button
+                            id="assess-button"
+                            type="submit"
+                        >
+                            Assess seller
+                        </button>
+                    </div>
+
+                    <p
+                        id="seller-id-help"
+                        class="input-help"
+                    >
+                        Enter a seller ID available in your marketplace records.
+                    </p>
+
+                    <div
+                        id="form-error"
+                        class="form-error hidden"
+                        role="alert"
+                    ></div>
+                </div>
+            </form>
+        </section>
+
+        <section
+            id="result-container"
+            class="result-container"
+            aria-label="Seller risk assessment results"
+            aria-live="polite"
+            aria-atomic="false"
+        >
+            <div class="empty-state">
+                <div
+                    class="empty-state-icon"
+                    aria-hidden="true"
+                >
+                    SR
+                </div>
+
+                <div>
+                    <div class="result-label">
+                        SELLER RISK OVERVIEW
+                    </div>
+
+                    <h2>Ready to assess a seller</h2>
+
+                    <p>
+                        Submit a seller ID to view the available
+                        delivery and review risk predictions,
+                        together with the model explanations and
+                        supporting seller intelligence.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <span>Seller Risk Intelligence</span>
+        <span>Machine Learning · Risk Analytics · Decision Support</span>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
